@@ -11,7 +11,7 @@ const maxSafeScreenWidth = (window.innerWidth / 100) * 40;
 const maxSafeScreenHeight = (window.innerHeight / 100) * 40;
 console.log(maxSafeScreenWidth, maxSafeScreenHeight);
 
-btnId.addEventListener("click", (event) => {
+btnId.addEventListener("mouseover", (event) => {
   numberOfRejections++;
 
   if (numberOfRejections > 5) really();
