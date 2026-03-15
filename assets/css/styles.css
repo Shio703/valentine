@@ -3,7 +3,7 @@
   src: url(../fonts/Love_Ya_Like_A_Sister/LoveYaLikeASister-Regular.ttf);
   font-weight: 400;
 }
-* {
+*, html, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
