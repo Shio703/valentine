@@ -3,8 +3,22 @@ if (window.innerWidth < 577) alert("Valentine703 is not properly working on devi
 
 let numberOfRejections = 0;
 const really = () => {
-  // TODO: Show some kitty picture.
+  const modal = document.getElementById("modal");
+  const modalPic = document.getElementById("modalPic");
+  const closeBtn = document.getElementById("closeBtn");
+ 
+ const namesArr = ["pic1.jpg", "pic2.jpg"];
+ const randomNumber = Math.floor(Math.random() * namesArr.length);
+
+  modalPic.setAttribute("src", `../assets/pictures/${namesArr[randomNumber]}`);
+  modal.style.display = "block";
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none"
+    numberOfRejections = 0;
+  });
 };
+
+
 let prevPosition = { clientX: null, clientY: null };
 
 btnId.addEventListener("mouseover", (event) => {
@@ -12,10 +26,9 @@ btnId.addEventListener("mouseover", (event) => {
   const maxSafeScreenWidth = (window.innerWidth / 100) * 40;
   const maxSafeScreenHeight = (window.innerHeight / 100) * 40;
 
-  console.log("40% of scren size:", maxSafeScreenWidth, maxSafeScreenHeight);
   numberOfRejections++;
 
-  if (numberOfRejections > 5) really();
+  if (numberOfRejections >= 5) really();
 
   // randomNumberX && Y is random number up to maxSafeScreen size.
   const randomNumberX = Math.round(Math.random() * maxSafeScreenWidth);
